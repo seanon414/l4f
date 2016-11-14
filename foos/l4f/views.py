@@ -2,7 +2,7 @@ from django.http import HttpResponse
 
 from slacker import Slacker
 
-slack = Slacker('xoxb-35700221924-XjG9qR4swYgOf4uEIWy1F7JG')
+slack = Slacker('* slack token here*')
 channel = '#l4f'
 
 
