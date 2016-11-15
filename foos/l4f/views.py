@@ -1,5 +1,6 @@
 import os
 
+import simplejson as json
 from django.http import HttpResponse
 from django.views.generic import FormView
 from slacker import Slacker
@@ -35,3 +36,10 @@ class HomePageView(FormView):
         context = self.get_context_data(**kwargs)
         context['form'] = form
         return self.render_to_response(context)
+
+
+def get_channel_history(request):
+    channel_id = slack.channels.get_channel_id('l4f')
+    channel = slack.channels.history(channel_id, count=5)
+    channel_history = channel.body['messages']
+    return HttpResponse(json.dumps({'messages': channel_history}), content_type='application/json')
