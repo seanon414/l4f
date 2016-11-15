@@ -32,6 +32,11 @@ body {
     margin-top: 20px;
     text-align: left;
 }
+.slack-history .btn-small {
+    float: right;
+    margin-top: 10px;
+    padding: 3px 10px;
+}
 .slack-messages {
     height: 100px;
     background: #fff;
@@ -56,7 +61,7 @@ input#id_number_of_players {
     top: 80px;
     left: 80px;
 }
-.players .btn {
+.players .btn-lg {
     clear:both;
     display: block;
     margin: 20px auto;
@@ -117,12 +122,15 @@ input#id_number_of_players {
         height: 350px;
         margin: 10px auto;
     }
-    .players .btn {
+    .players .btn-lg {
         margin-top: 10px;
         padding: 5px 10px;
     }
     .arrow-down {
         top: 20px;
+    }
+    .slack-messages {
+        height: 75px;
     }
 }
 @media (min-width: 920px) {

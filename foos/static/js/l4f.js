@@ -23,7 +23,7 @@
                 }
             })
 
-            var callhistory = setInterval(function () {
+            $("[name='get_latest']").on("click", function () {
                 $.ajax({
                     url: "history/",
                     dataType: "json",
@@ -37,8 +37,9 @@
                             $(".slack-messages").append(message);
                         })
                     }
-                })
-            }, 5000);
+                });
+            });
+
         }
 
     };
