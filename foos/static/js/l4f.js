@@ -7,6 +7,8 @@
     var l4f = {
         init: function () {
 
+            var csfrtoken = $("[name='csrfmiddlewaretoken']").val(),
+                message;
             $(".arrow-up").on("click", function () {
                 var num = Number($("#id_number_of_players").val());
                 if (num < 3) {
@@ -23,11 +25,17 @@
 
             var callhistory = setInterval(function () {
                 $.ajax({
-                    url: "/l4f/history/",
+                    url: "history/",
                     dataType: "json",
+                    data: {"csrfmiddlewaretoken": csfrtoken},
                     method: "POST",
-                    success: function () {
-                        console.log(data);
+                    success: function (data) {
+                        $(".slack-messages").html("");
+                        $.each(data.messages, function(i,val) {
+                            message = data.messages[i].username + ": " +
+                                data.messages[i].text + "<br>";
+                            $(".slack-messages").append(message);
+                        })
                     }
                 })
             }, 1000);
