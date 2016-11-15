@@ -1,0 +1,131 @@
+header {
+    padding: 50px;
+    background-color: white;
+}
+
+body {
+    background: #fff url('../img/bg-foosball.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container-fluid {
+    position: relative;
+    padding: 50px;
+}
+.bg-overlay {
+    height: 500px;
+    background-color: #fff;
+    opacity: 0.7;
+    z-index: 1;
+    margin: 30px auto;
+}
+.players {
+    position: absolute;
+    top: 120px;
+    right: 70px;
+    color: #161f29;
+    z-index: 99;
+}
+.slack-history {
+    clear: both;
+    margin-top: 20px;
+}
+.slack-messages {
+    height: 100px;
+    background: #fff;
+    overflow-y: scroll;
+    border-radius: 5px;
+    border: 1px solid #161f29;
+    font-size: 10px;
+    padding: 20px;
+}
+input#id_number_of_players {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: #a94442;
+    font-size: 40px;
+}
+#logo-big {
+    height: 400px;
+    z-index: 99;
+    position: absolute;
+    top: 100px;
+    left: 80px;
+}
+.players .btn {
+    clear:both;
+    display: block;
+    float: right;
+    margin: 30px 28px 30px 0;
+}
+.number-players {
+    margin-right: 10px;
+}
+.arrows {
+    position: relative;
+    display: inline;
+    top: -10px;
+}
+.arrow-up, .arrow-down {
+    position: absolute;
+    left: 0;
+}
+.arrow-up {
+    top: 0;
+}
+.arrow-down {
+    top: 35px;
+}
+.arrow-up:before {
+    content: "\f151";
+    font-family: FontAwesome;
+    font-style: normal;
+}
+.arrow-down:before {
+    content: "\f150";
+    font-family: FontAwesome;
+    font-style: normal;
+}
+/* Responsive */
+@media (max-width: 920px) {
+    .container-fluid {
+        padding: 20px;
+    }
+    .players {
+        font-size: 20px;
+        top: 80px;
+    }
+    input#id_number_of_players {
+        font-size: 36px;
+    }
+    .arrows {
+        font-size: 36px;
+        top: -
+    }
+    .arrow-down {
+        margin-top: 15px;
+    }
+    #logo-big {
+        height:250px;
+        top: 50px;
+        left: 30px;
+    }
+    .bg-overlay {
+        height: 350px;
+        margin: 10px auto;
+    }
+    .players .btn {
+        margin-top: 10px;
+        padding: 5px 10px;
+    }
+    .arrow-down {
+        top: 20px;
+    }
+}
+@media (min-width: 920px) {
+    .players {
+        font-size: 36px;
+    }
+}
