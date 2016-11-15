@@ -46,5 +46,5 @@ def get_channel_history(request):
         if not message.get('username'):
             user_id = message['user']
             user_info = slack.users.info(user_id)
-            message['username'] = user_info.body['user']['profile']['first_name']
+            message['username'] = user_info.body['user']['profile'].get('first_name', '')
     return HttpResponse(json.dumps({'messages': channel_history}), content_type='application/json')
